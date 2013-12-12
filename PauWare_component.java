@@ -63,7 +63,7 @@ public class PauWare_component {
         /**
          * PauWare view
          */
-        com.pauware.pauware_view.Statechart_monitor_viewer statechart_monitor_viewer = new com.pauware.pauware_view.Statechart_monitor_viewer();
+        com.PauWare.PauWare_view.Statechart_monitor_viewer statechart_monitor_viewer = new com.PauWare.PauWare_view.Statechart_monitor_viewer();
         _PauWare_component.add_listener(statechart_monitor_viewer);
         _PauWare_component.initialize_listener();
 
@@ -132,5 +132,10 @@ public class PauWare_component {
 
     public void z() {
         System.out.println("z activated");
+    }
+    
+    public AbstractStatechart_monitor getStateMachine()
+    {
+        return _PauWare_component;
     }
 }

@@ -1,7 +1,7 @@
 package blcr_project_test;
 
 public class PauWare_component_test {
-
+/*
     public static void main(String[] args) {
         try {
             PauWare_component pc = new PauWare_component();
@@ -28,4 +28,5 @@ public class PauWare_component_test {
             t.printStackTrace();
         }
     }
+    */
 }

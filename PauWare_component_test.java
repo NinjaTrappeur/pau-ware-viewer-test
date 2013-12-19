@@ -1,6 +1,7 @@
 package blcr_project_test;
 
 import com.PauWare.PauWare_view.AbstractElement;
+import com.PauWare.PauWare_view.JungLayoutTest;
 import com.PauWare.PauWare_view.StateChart;
 import com.PauWare.PauWare_view.Transition;
 import com.pauware.pauware_engine._Exception.Statechart_exception;
@@ -15,8 +16,11 @@ public class PauWare_component_test {
 
     public static void main(String[] args)
     {
-        testPauWareStateChart();
+        //testPauWareStateChart();
         testMyStateChart();
+        
+//        JungLayoutTest jungLayoutTest = new JungLayoutTest();
+//        jungLayoutTest.runTest();
     }
 
     public static void testPauWareStateChart()

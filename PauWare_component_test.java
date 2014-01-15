@@ -1,8 +1,10 @@
 package blcr_project_test;
 
 import com.PauWare.PauWare_view.AbstractElement;
+import com.PauWare.PauWare_view.ConcurrencyCluster;
 import com.PauWare.PauWare_view.JungLayoutTest;
 import com.PauWare.PauWare_view.StateChart;
+import com.PauWare.PauWare_view.SuperState;
 import com.PauWare.PauWare_view.Transition;
 import com.pauware.pauware_engine._Exception.Statechart_exception;
 import java.io.PrintStream;
@@ -88,6 +90,22 @@ public class PauWare_component_test
                         "\n\tShallowContentSize: "+ elem.shallowContentSize()+
                         "\n\tDeepContentSize: "+ elem.deepContentSize()
                 );
+
+                if(elem instanceof SuperState)
+                {
+                    _out.println("\tNb clusters: "+((SuperState)elem).clusters().size());
+
+                    for(ConcurrencyCluster cluster : ((SuperState)elem).clusters())
+                    {
+                        _out.println("\t"+cluster.name());
+                        _out.print("\t\t");
+                        for(AbstractElement state : cluster.substates())
+                        {
+                            _out.print(state.name()+"\t");
+                        }
+                        _out.println();
+                    }
+                }
             }
 
             Iterator<Transition> it_trans = transitions.iterator();

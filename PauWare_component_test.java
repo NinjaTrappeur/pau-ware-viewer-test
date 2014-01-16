@@ -21,8 +21,8 @@ public class PauWare_component_test
 
     public static void main(String[] args)
     {
-        //testPauWareStateChart();
-        testMyStateChart();
+        testPauWareStateChart();
+        //testMyStateChart();
 //        try
 //        {
 //            testPauwareDraw();
@@ -71,7 +71,7 @@ public class PauWare_component_test
             PauWare_component pc = new PauWare_component();
             pc.start();
             
-            StateChart myStateChart = new StateChart(pc.getStateMachine(), "Parse Test", 800, 600);
+            StateChart myStateChart = new StateChart(pc.getStateMachine(), "Parse Test", 800, 800);
             
             Collection<AbstractElement> elements = myStateChart.elements();
             Collection<Transition> transitions = myStateChart.transitions();

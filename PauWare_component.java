@@ -1,5 +1,10 @@
 package blcr_project_test;
 
+import com.PauWare.PauWare_view.BasicLayoutProcessor;
+import com.PauWare.PauWare_view.FakeLayoutProcessor;
+import com.PauWare.PauWare_view.BasicTransitionLayoutProcessor;
+import com.PauWare.PauWare_view.CircleLayoutProcessor;
+import com.PauWare.PauWare_view.ILayoutProcessor;
 import com.pauware.pauware_engine._Core.*;
 import com.pauware.pauware_engine._Exception.*;
 import com.pauware.pauware_engine._Java_EE.*;
@@ -64,6 +69,13 @@ public class PauWare_component {
          * PauWare view
          */
         com.PauWare.PauWare_view.Statechart_monitor_viewer statechart_monitor_viewer = new com.PauWare.PauWare_view.Statechart_monitor_viewer();
+        //parametrize
+        ILayoutProcessor layoutProcessor = new CircleLayoutProcessor();
+        BasicTransitionLayoutProcessor transitionProcessor = new BasicTransitionLayoutProcessor(layoutProcessor);
+        transitionProcessor.setDrawingOption(BasicTransitionLayoutProcessor.DrawingOptions.BREAK_LINE);
+        layoutProcessor.setTransitionLayoutProcessor(transitionProcessor);
+        statechart_monitor_viewer.setLayoutProcessor(layoutProcessor);
+
         _PauWare_component.add_listener(statechart_monitor_viewer);
         _PauWare_component.initialize_listener();
 
